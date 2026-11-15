@@ -1,12 +1,6 @@
-/* =====================================================
-   ConectaMás · Landing Page
-   Guía de estilo (Informe TP, cap. 4.1): paleta derivada del logo,
-   Poppins (Regular / SemiBold / Bold), espaciado en múltiplos de 4 px,
-   radios de 8–12 px y sombras suaves.
-   ===================================================== */
 
 :root {
-  /* Colores (Tabla 2) */
+
   --blue: #0B4DA2;
   --blue-light: #3F7BD0;
   --navy: #0A2540;
@@ -20,7 +14,6 @@
   --border: #DDE3EC;
   --hero-from: #E6EEFB;
 
-  /* Espaciado (Tabla 4) */
   --space-xs: 4px;
   --space-sm: 8px;
   --space-md: 16px;
@@ -29,7 +22,7 @@
   --space-2xl: 56px;
   --space-3xl: 80px;
 
-  /* Formas */
+
   --radius: 8px;
   --radius-card: 12px;
   --shadow: 0 4px 16px rgba(10, 37, 64, .08);
@@ -37,7 +30,7 @@
   --transition: 250ms ease;
 }
 
-/* ---------- Reset ---------- */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body {
@@ -63,7 +56,7 @@ button { cursor: pointer; }
 }
 .skip-link:focus { left: 8px; }
 
-/* ---------- Utilidades ---------- */
+
 .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 var(--space-3xl); }
 .container--md { max-width: 1100px; padding: 0 var(--space-lg); }
 .container--sm { max-width: 760px; padding: 0 var(--space-lg); }
@@ -71,14 +64,14 @@ button { cursor: pointer; }
 .muted { color: var(--gray-text); }
 .small { font-size: 13px; }
 
-/* ---------- Tipografía (Tabla 1) ---------- */
+
 .display { font-size: 52px; line-height: 60px; font-weight: 700; margin: var(--space-md) 0; }
 .h1 { font-size: 34px; line-height: 1.25; font-weight: 700; }
 .h2 { font-size: 22px; line-height: 1.3; font-weight: 700; margin: var(--space-sm) 0 var(--space-md); }
 h3 { font-size: 16px; font-weight: 600; }
 .lead { font-size: 16px; color: var(--gray-text); max-width: 520px; margin-bottom: var(--space-lg); }
 
-/* ---------- Botones ---------- */
+
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   min-height: 44px; padding: 11px 22px;
@@ -109,7 +102,7 @@ h3 { font-size: 16px; font-weight: 600; }
 }
 .pill--yellow { background: #FFF1BF; color: var(--navy); }
 
-/* ---------- Navbar ---------- */
+
 .navbar {
   position: sticky; top: 0; z-index: 100;
   background: #fff; border-bottom: 1px solid #EEF1F6;
@@ -137,7 +130,7 @@ h3 { font-size: 16px; font-weight: 600; }
   width: 44px; height: 44px; border-radius: var(--radius); color: var(--navy);
 }
 
-/* ---------- Hero ---------- */
+
 .hero {
   position: relative; overflow: hidden;
   background: linear-gradient(135deg, var(--hero-from) 0%, #fff 70%);
@@ -151,7 +144,7 @@ h3 { font-size: 16px; font-weight: 600; }
 .blob--yellow { width: 180px; height: 180px; background: var(--yellow); left: 38%; bottom: -70px; }
 .blob--green { width: 240px; height: 240px; background: var(--green); left: -90px; bottom: -110px; }
 
-/* Mockup de teléfono */
+
 .hero__visual { display: flex; justify-content: center; }
 .phone {
   width: 280px; padding: 14px; background: #fff;
@@ -168,7 +161,7 @@ h3 { font-size: 16px; font-weight: 600; }
 .phone__card strong { font-size: 13px; }
 .phone__card small { font-size: 11px; color: var(--gray-text); }
 
-/* Mapa (cuadrícula clara + pines) */
+
 .map-grid {
   background-color: #EDF2FA;
   background-image:
@@ -188,7 +181,6 @@ h3 { font-size: 16px; font-weight: 600; }
 button.pin { transition: transform var(--transition); }
 button.pin:hover, button.pin.is-active { transform: translate(-50%, -50%) scale(1.5); }
 
-/* ---------- Secciones ---------- */
 .section { padding: var(--space-2xl) 0; }
 .section--tight { padding: var(--space-lg) 0 var(--space-3xl); }
 .section--white { background: #fff; }
@@ -202,7 +194,6 @@ button.pin:hover, button.pin.is-active { transform: translate(-50%, -50%) scale(
 
 .card { background: #fff; border-radius: var(--radius-card); box-shadow: var(--shadow); padding: var(--space-lg); }
 
-/* Chips */
 .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-sm); }
 .chip {
   padding: 8px 18px; border-radius: 999px; background: #fff; color: var(--navy);
@@ -213,7 +204,6 @@ button.pin:hover, button.pin.is-active { transform: translate(-50%, -50%) scale(
 .chip.is-active { background: var(--blue); border-color: var(--blue); color: #fff; }
 .chips__result { text-align: center; min-height: 24px; margin: var(--space-md) 0 var(--space-lg); font-size: 14px; color: var(--gray-text); }
 
-/* Beneficios */
 .benefit { display: flex; align-items: center; gap: var(--space-md); padding: 14px var(--space-md); }
 .benefit h3 { font-size: 14px; }
 .benefit p { font-size: 12px; color: var(--gray-text); }
@@ -225,7 +215,6 @@ button.pin:hover, button.pin.is-active { transform: translate(-50%, -50%) scale(
 .benefit__icon--green { background: var(--green-dark); }
 .benefit__icon--navy { background: var(--navy); }
 
-/* Pasos */
 .step__num {
   display: inline-grid; place-items: center; width: 28px; height: 28px;
   background: var(--blue); color: #fff; border-radius: var(--radius);
@@ -233,7 +222,6 @@ button.pin:hover, button.pin.is-active { transform: translate(-50%, -50%) scale(
 }
 .step p { font-size: 14px; color: var(--gray-text); margin-top: 4px; }
 
-/* Mapa en tiempo real */
 .map-block { align-items: center; margin-top: var(--space-2xl); gap: var(--space-2xl); }
 .map-block .h1 { font-size: 28px; margin: var(--space-sm) 0 var(--space-md); }
 .checklist { display: grid; gap: var(--space-sm); margin-bottom: var(--space-lg); font-size: 14px; }
@@ -250,7 +238,6 @@ button.pin:hover, button.pin.is-active { transform: translate(-50%, -50%) scale(
 .map__card a { font-size: 12px; font-weight: 600; text-decoration: none; margin-top: 4px; }
 .map__card a:hover { text-decoration: underline; color: var(--blue-light); }
 
-/* Comunidades */
 .community { padding: 0; overflow: hidden; display: flex; flex-direction: column; transition: transform var(--transition), box-shadow var(--transition); }
 .community:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 .community.is-dimmed { opacity: .65; }
@@ -261,12 +248,12 @@ button.pin:hover, button.pin.is-active { transform: translate(-50%, -50%) scale(
 .community__banner--yellow { background: linear-gradient(135deg, #F5B800, #FFD65C); }
 .community__body { padding: var(--space-md); display: flex; flex-direction: column; gap: var(--space-sm); align-items: flex-start; }
 
-/* Negocios / expertos */
+
 .offer { display: flex; flex-direction: column; align-items: flex-start; }
 .offer .btn { margin-top: auto; }
 .offer .checklist { margin-bottom: var(--space-md); }
 
-/* Planes */
+
 .plans { align-items: stretch; }
 .plan { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 2px; position: relative; padding: var(--space-lg); }
 .plan__price { font-size: 32px; font-weight: 700; color: var(--blue); line-height: 1.3; margin-top: var(--space-sm); }
@@ -276,13 +263,12 @@ button.pin:hover, button.pin.is-active { transform: translate(-50%, -50%) scale(
 .plan--featured { border: 2px solid var(--blue); box-shadow: var(--shadow-lg); }
 .plan__tag { margin-bottom: 4px; }
 
-/* Testimonios */
 .testimonial { display: flex; flex-direction: column; gap: var(--space-sm); }
 .stars { color: var(--yellow); font-size: 12px; letter-spacing: 2px; }
 .testimonial blockquote { font-size: 13px; color: var(--gray-text); }
 .testimonial figcaption { font-size: 12px; font-weight: 600; margin-top: auto; }
 
-/* FAQ */
+
 .faq { display: grid; gap: var(--space-md); }
 .faq__item { background: #fff; border-radius: var(--radius-card); box-shadow: var(--shadow); }
 .faq__q {
@@ -294,7 +280,6 @@ button.pin:hover, button.pin.is-active { transform: translate(-50%, -50%) scale(
 .faq__q[aria-expanded="true"] i { transform: rotate(45deg); color: var(--blue); }
 .faq__a { padding: 0 20px 16px; font-size: 14px; color: var(--gray-text); }
 
-/* Equipo */
 .member { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md); }
 .member h3 { font-size: 14px; line-height: 1.35; }
 .avatar {
@@ -303,7 +288,6 @@ button.pin:hover, button.pin.is-active { transform: translate(-50%, -50%) scale(
   background: #E1E9F5; color: var(--blue); font-weight: 700; font-size: 18px;
 }
 
-/* Formularios */
 .form { position: relative; display: grid; gap: var(--space-md); }
 .card.form { padding: var(--space-xl); }
 .field { display: grid; gap: 6px; }
@@ -321,12 +305,12 @@ button.pin:hover, button.pin.is-active { transform: translate(-50%, -50%) scale(
 .field.has-error .field__error::before { content: "⚠ "; }
 .form__ok { color: var(--green-dark); font-weight: 600; font-size: 14px; text-align: center; }
 
-/* CTA final */
+
 .cta-final { background: var(--blue); color: #fff; text-align: center; border-radius: var(--radius-card); padding: var(--space-2xl) var(--space-lg); }
 .cta-final h2 { font-size: 22px; font-weight: 700; }
 .cta-final p { font-size: 13px; margin: var(--space-sm) 0 var(--space-lg); }
 
-/* Footer */
+
 .footer { background: var(--navy); color: #fff; padding: var(--space-2xl) 0 var(--space-lg); }
 .footer__grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr; gap: var(--space-xl); }
 .footer__brand p { font-size: 12px; margin-top: var(--space-md); max-width: 260px; color: #D5DDEA; }
@@ -336,13 +320,12 @@ button.pin:hover, button.pin.is-active { transform: translate(-50%, -50%) scale(
 .footer a:not(.brand):hover { text-decoration: underline; color: #fff; }
 .footer__copy { text-align: center; font-size: 12px; color: #AEBBD0; margin-top: var(--space-xl); padding: 0 var(--space-md); }
 
-/* Modal */
 .modal { border: 0; border-radius: var(--radius-card); padding: var(--space-xl); width: min(440px, calc(100% - 32px)); box-shadow: var(--shadow-lg); color: var(--navy); }
 .modal::backdrop { background: rgba(10, 37, 64, .55); }
 .modal .h1 { text-align: center; margin-bottom: var(--space-sm); font-size: 28px; }
 .modal__close { position: absolute; right: -12px; top: -12px; width: 40px; height: 40px; border: 0; background: none; font-size: 18px; color: var(--gray-text); }
 
-/* ---------- Responsive ---------- */
+
 @media (max-width: 1239px) {
   .container, .navbar__inner { padding-left: var(--space-xl); padding-right: var(--space-xl); }
   .container--md, .container--sm { padding-left: var(--space-lg); padding-right: var(--space-lg); }
