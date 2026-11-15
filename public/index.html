@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ConectaMás | Encuentra a tu gente. Vive tu hobby.</title>
+  <meta name="description" content="ConectaMás conecta a personas, comunidades, negocios y expertos que comparten tu pasión, cerca de ti y en tiempo real.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+
+  <!-- Google Fonts: Poppins (Regular, SemiBold, Bold) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="assets/styles/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#inicio">Saltar al contenido</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="#inicio" class="brand" aria-label="ConectaMás, ir al inicio">
+        <img src="assets/images/logo-symbol.png" alt="" width="40" height="40">
+        <span class="brand__text">Conecta<span>Más</span></span>
+      </a>
+
+      <nav class="menu" id="menu" aria-label="Navegación principal">
+        <a href="#como-funciona" class="menu__link">Cómo funciona</a>
+        <a href="#hobbies" class="menu__link">Hobbies</a>
+        <a href="#mapa" class="menu__link">Mapa</a>
+        <a href="#negocios" class="menu__link">Para negocios</a>
+        <a href="#planes" class="menu__link">Planes</a>
+        <a href="#nosotros" class="menu__link">Nosotros</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="#contacto" class="link-text">Iniciar sesión</a>
+        <button class="btn btn--primary" data-open-signup>Crear cuenta</button>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="inicio">
+      <span class="blob blob--blue"></span>
+      <span class="blob blob--yellow"></span>
+      <span class="blob blob--green"></span>
+
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <span class="pill pill--yellow">Deporte · arte · música · gastronomía · tecnología</span>
+          <h1 class="display">Encuentra a tu gente.<br><span class="text-blue">Vive tu hobby.</span></h1>
+          <p class="lead">ConectaMás te acerca a personas, comunidades, negocios y expertos que comparten tu pasión, cerca de ti y en tiempo real.</p>
+          <div class="hero__cta">
+            <button class="btn btn--primary btn--lg" data-open-signup>Crear mi cuenta gratis</button>
+            <a href="#mapa" class="btn btn--outline btn--lg">Ver actividades cerca de mí</a>
+          </div>
+          <p class="small muted">Sin tarjeta de crédito · Tú decides cuándo compartir tu ubicación.</p>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="phone">
+            <div class="phone__search"><i class="fa-solid fa-magnifying-glass"></i> Buscar en el mapa</div>
+            <div class="phone__map map-grid">
+              <span class="pin pin--blue" style="top:18%;left:22%"></span>
+              <span class="pin pin--red" style="top:10%;left:68%"></span>
+              <span class="pin pin--green" style="top:38%;left:82%"></span>
+              <span class="pin pin--yellow" style="top:58%;left:52%"></span>
+            </div>
+            <div class="phone__card">
+              <strong>Futsal 6v6 · Campo San Borja</strong>
+              <small>Hoy 7:00 pm · Intermedio · 8/12 van</small>
+              <button class="btn btn--primary btn--block" tabindex="-1">Unirme</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOBBIES + BENEFICIOS ================= -->
+    <section class="section section--white" id="hobbies">
+      <div class="container">
+        <h2 class="section__title">Explora por hobby</h2>
+        <p class="section__subtitle">Elige lo que te apasiona y descubre quién más lo practica.</p>
+
+        <div class="chips" role="group" aria-label="Filtrar por hobby" id="hobbyChips">
+          <button class="chip is-active" data-hobby="Deportes" aria-pressed="true">Deportes</button>
+          <button class="chip" data-hobby="Arte" aria-pressed="false">Arte y manualidades</button>
+          <button class="chip" data-hobby="Música" aria-pressed="false">Música</button>
+          <button class="chip" data-hobby="Gastronomía" aria-pressed="false">Gastronomía</button>
+          <button class="chip" data-hobby="Tecnología" aria-pressed="false">Tecnología</button>
+          <button class="chip" data-hobby="Videojuegos" aria-pressed="false">Videojuegos</button>
+          <button class="chip" data-hobby="Coleccionismo" aria-pressed="false">Coleccionismo</button>
+        </div>
+        <p class="chips__result" id="chipResult" aria-live="polite"></p>
+
+        <div class="grid grid--3 benefits">
+          <article class="card benefit">
+            <span class="benefit__icon benefit__icon--blue"><i class="fa-solid fa-check"></i></span>
+            <div><h3>Perfiles verificados</h3><p>Sabes con quién te juntas.</p></div>
+          </article>
+          <article class="card benefit">
+            <span class="benefit__icon benefit__icon--green"><i class="fa-solid fa-star"></i></span>
+            <div><h3>Reseñas reales</h3><p>Opiniones de quienes ya fueron.</p></div>
+          </article>
+          <article class="card benefit">
+            <span class="benefit__icon benefit__icon--navy"><i class="fa-solid fa-location-dot"></i></span>
+            <div><h3>Ubicación opcional</h3><p>Tú controlas qué compartes.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CÓMO FUNCIONA ================= -->
+    <section class="section section--gray" id="como-funciona">
+      <div class="container">
+        <h2 class="section__title">Así de fácil es conectar</h2>
+        <p class="section__subtitle">Tres pasos para pasar de la idea al plan.</p>
+
+        <div class="grid grid--3">
+          <article class="card step">
+            <span class="step__num">1</span>
+            <h3>Cuéntanos tus hobbies</h3>
+            <p>Elige lo que te gusta y tu nivel para recibir sugerencias a tu medida.</p>
+          </article>
+          <article class="card step">
+            <span class="step__num">2</span>
+            <h3>Descubre qué pasa cerca</h3>
+            <p>Mira en el mapa las actividades de tu zona, en tiempo real.</p>
+          </article>
+          <article class="card step">
+            <span class="step__num">3</span>
+            <h3>Únete y conecta</h3>
+            <p>Reserva tu lugar, chatea con el grupo y haz nuevos amigos.</p>
+          </article>
+        </div>
+
+        <!-- Mapa en tiempo real -->
+        <div class="grid grid--2 map-block" id="mapa">
+          <div>
+            <span class="pill pill--yellow">Mapa en tiempo real</span>
+            <h2 class="h1">Entérate hoy de lo que pasa a tu alrededor</h2>
+            <ul class="checklist">
+              <li><i class="fa-solid fa-check"></i> Filtra por hobby, nivel y distancia.</li>
+              <li><i class="fa-solid fa-check"></i> Eventos, negocios y expertos en un solo mapa.</li>
+              <li><i class="fa-solid fa-check"></i> Ubicación exacta visible solo para participantes.</li>
+            </ul>
+            <a href="#hobbies" class="btn btn--primary">Explorar el mapa</a>
+          </div>
+
+          <div class="map map-grid" id="mapBox">
+            <button class="pin pin--blue" style="top:28%;left:18%" data-title="Torneo de ajedrez" data-info="Sábado 4:00 pm · Parque Kennedy" aria-label="Evento: Torneo de ajedrez"></button>
+            <button class="pin pin--green" style="top:62%;left:35%" data-title="Cerámica Taller Lima" data-info="Negocio · 2×1 hasta el 30/10" aria-label="Negocio: Cerámica Taller Lima"></button>
+            <button class="pin pin--yellow" style="top:44%;left:56%" data-title="Clase de guitarra" data-info="Mañana 6:00 pm · Barranco" aria-label="Experto: Clase de guitarra"></button>
+            <button class="pin pin--red" style="top:20%;left:80%" data-title="Punto de encuentro" data-info="Parque de la Exposición" aria-label="Punto de interés"></button>
+            <div class="map__card" id="mapCard" aria-live="polite">
+              <strong id="mapCardTitle">Clase de guitarra</strong>
+              <small id="mapCardInfo">Mañana 6:00 pm · Barranco</small>
+              <a href="#comunidades">Ver más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMUNIDADES ================= -->
+    <section class="section section--white" id="comunidades">
+      <div class="container">
+        <h2 class="section__title">Comunidades por hobby</h2>
+        <p class="section__subtitle">Súmate a grupos activos cerca de ti.</p>
+
+        <div class="grid grid--3" id="communityGrid">
+          <article class="card community" data-hobby="Deportes">
+            <div class="community__banner community__banner--blue"></div>
+            <div class="community__body">
+              <h3>Futsal Lima Sur</h3>
+              <p class="small muted">1.2 mil miembros · Fútbol</p>
+              <button class="btn btn--outline btn--sm">Unirme</button>
+            </div>
+          </article>
+          <article class="card community" data-hobby="Música">
+            <div class="community__banner community__banner--green"></div>
+            <div class="community__body">
+              <h3>Guitarra para principiantes</h3>
+              <p class="small muted">640 miembros · Música</p>
+              <button class="btn btn--outline btn--sm">Unirme</button>
+            </div>
+          </article>
+          <article class="card community" data-hobby="Coleccionismo">
+            <div class="community__banner community__banner--yellow"></div>
+            <div class="community__body">
+              <h3>Coleccionistas de figuras</h3>
+              <p class="small muted">198 miembros · Coleccionismo</p>
+              <button class="btn btn--outline btn--sm">Unirme</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PARA NEGOCIOS Y EXPERTOS ================= -->
+    <section class="section section--gray" id="negocios">
+      <div class="container container--md">
+        <h2 class="section__title">Haz crecer tu negocio con la comunidad</h2>
+        <p class="section__subtitle">Ofrece tus servicios a personas realmente interesadas en lo que haces.</p>
+
+        <div class="grid grid--2">
+          <article class="card offer">
+            <span class="pill pill--yellow">Para negocios</span>
+            <h3 class="h2">Llega a quienes quieren lo que ofreces</h3>
+            <ul class="checklist checklist--green">
+              <li><i class="fa-solid fa-check"></i> Publica talleres, eventos y productos.</li>
+              <li><i class="fa-solid fa-check"></i> Segmenta por hobby, nivel y zona.</li>
+              <li><i class="fa-solid fa-check"></i> Recibe reseñas verificadas.</li>
+            </ul>
+            <a href="#contacto" class="btn btn--green">Registrar mi negocio</a>
+          </article>
+          <article class="card offer">
+            <span class="pill pill--yellow">Para expertos</span>
+            <h3 class="h2">Llena tu agenda con alumnos interesados</h3>
+            <ul class="checklist checklist--green">
+              <li><i class="fa-solid fa-check"></i> Muestra tu experiencia y tus precios.</li>
+              <li><i class="fa-solid fa-check"></i> Gestiona horarios y reservas.</li>
+              <li><i class="fa-solid fa-check"></i> Recibe el temario del alumno antes de la clase.</li>
+            </ul>
+            <a href="#contacto" class="btn btn--green">Crear mi perfil</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PLANES ================= -->
+    <section class="section section--white" id="planes">
+      <div class="container container--md">
+        <h2 class="section__title">Elige el plan que va contigo</h2>
+        <p class="section__subtitle">Precios referenciales.</p>
+
+        <div class="grid grid--3 plans">
+          <article class="card plan">
+            <h3>Explorador</h3>
+            <p class="plan__price">S/ 0</p>
+            <p class="small muted">para siempre</p>
+            <ul class="plan__list">
+              <li><i class="fa-solid fa-check"></i> Mapa de actividades</li>
+              <li><i class="fa-solid fa-check"></i> Únete a comunidades</li>
+              <li><i class="fa-solid fa-check"></i> Chat de grupo</li>
+            </ul>
+            <button class="btn btn--outline btn--block" data-open-signup>Empieza gratis</button>
+          </article>
+
+          <article class="card plan plan--featured">
+            <span class="pill pill--yellow plan__tag">Recomendado</span>
+            <h3>Negocio</h3>
+            <p class="plan__price">S/ 29</p>
+            <p class="small muted">por mes</p>
+            <ul class="plan__list">
+              <li><i class="fa-solid fa-check"></i> Publicaciones segmentadas</li>
+              <li><i class="fa-solid fa-check"></i> Panel de visitas y reservas</li>
+              <li><i class="fa-solid fa-check"></i> Reseñas verificadas</li>
+            </ul>
+            <a href="#contacto" class="btn btn--primary btn--block">Probar el plan Negocio</a>
+          </article>
+
+          <article class="card plan">
+            <h3>Experto</h3>
+            <p class="plan__price">Comisión</p>
+            <p class="small muted">por clase</p>
+            <ul class="plan__list">
+              <li><i class="fa-solid fa-check"></i> Perfil con calendario</li>
+              <li><i class="fa-solid fa-check"></i> Reservas y pagos</li>
+              <li><i class="fa-solid fa-check"></i> Temario del alumno</li>
+            </ul>
+            <a href="#contacto" class="btn btn--outline btn--block">Crear mi perfil</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIOS ================= -->
+    <section class="section section--gray" id="comunidad">
+      <div class="container container--md">
+        <h2 class="section__title">Lo que dice la comunidad</h2>
+        <p class="section__subtitle">Textos de ejemplo.</p>
+
+        <div class="grid grid--3">
+          <figure class="card testimonial">
+            <div class="stars" aria-label="5 de 5 estrellas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <blockquote>Por fin encontré a gente de mi nivel para jugar futsal cerca de casa.</blockquote>
+            <figcaption>Ernesto R. · Persona</figcaption>
+          </figure>
+          <figure class="card testimonial">
+            <div class="stars" aria-label="5 de 5 estrellas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <blockquote>Mis servicios llegan a personas que de verdad quieren coleccionar.</blockquote>
+            <figcaption>Fabio P. · Negocio</figcaption>
+          </figure>
+          <figure class="card testimonial">
+            <div class="stars" aria-label="5 de 5 estrellas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <blockquote>Recibo reservas con el temario listo y preparo mejor mis clases.</blockquote>
+            <figcaption>Roly L. · Experto</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section section--white" id="ayuda">
+      <div class="container container--sm">
+        <h2 class="section__title">Preguntas frecuentes</h2>
+        <p class="section__subtitle">Lo que más nos preguntan.</p>
+
+        <div class="faq" id="faq">
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false" aria-controls="faq-1" id="faq-btn-1">¿Cuánto cuesta usar ConectaMás? <i class="fa-solid fa-plus"></i></button>
+            <div class="faq__a" id="faq-1" role="region" aria-labelledby="faq-btn-1" hidden><p>Para personas es gratis. Los negocios y expertos pueden elegir un plan según lo que necesiten.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false" aria-controls="faq-2" id="faq-btn-2">¿Puedo ocultar mi ubicación exacta? <i class="fa-solid fa-plus"></i></button>
+            <div class="faq__a" id="faq-2" role="region" aria-labelledby="faq-btn-2" hidden><p>Sí. Tú decides cuándo compartirla y los demás solo verán una zona aproximada, no tu ubicación exacta.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false" aria-controls="faq-3" id="faq-btn-3">¿Cómo se verifican los perfiles y las reseñas? <i class="fa-solid fa-plus"></i></button>
+            <div class="faq__a" id="faq-3" role="region" aria-labelledby="faq-btn-3" hidden><p>Enviamos un código a tu correo y a tu teléfono. Las reseñas solo las pueden dejar quienes asistieron a la actividad.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false" aria-controls="faq-4" id="faq-btn-4">¿Cómo registro mi negocio o mi perfil de experto? <i class="fa-solid fa-plus"></i></button>
+            <div class="faq__a" id="faq-4" role="region" aria-labelledby="faq-btn-4" hidden><p>Crea tu cuenta, elige «Para negocios» o «Para expertos» y completa tu perfil. Si tienes dudas, escríbenos desde Contáctanos.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= NOSOTROS ================= -->
+    <section class="section section--gray" id="nosotros">
+      <div class="container">
+        <h2 class="section__title">Nuestro equipo</h2>
+        <p class="section__subtitle">Estudiantes de la UPC detrás de ConectaMás.</p>
+
+        <div class="grid grid--3 team">
+          <article class="card member"><span class="avatar" aria-hidden="true">MH</span><div><h3>Marcoandres Herrera Albites</h3><p class="small">U202518934</p><p class="small text-blue">Estudiante · UPC</p></div></article>
+          <article class="card member"><span class="avatar" aria-hidden="true">GT</span><div><h3>Gino Torres Honores Pimentel</h3><p class="small">U202315369</p><p class="small text-blue">Estudiante · UPC</p></div></article>
+          <article class="card member"><span class="avatar" aria-hidden="true">AQ</span><div><h3>Ayrton Jhonny Quiroz Sucno</h3><p class="small">U20231B927</p><p class="small text-blue">Estudiante · UPC</p></div></article>
+          <article class="card member"><span class="avatar" aria-hidden="true">DS</span><div><h3>Denis Anderson Saenz Espinoza</h3><p class="small">U20241G092</p><p class="small text-blue">Estudiante · UPC</p></div></article>
+          <article class="card member"><span class="avatar" aria-hidden="true">AQ</span><div><h3>Andre Sebastian Quispe Almonacid</h3><p class="small">U201815005</p><p class="small text-blue">Estudiante · UPC</p></div></article>
+          <article class="card member"><span class="avatar" aria-hidden="true">JD</span><div><h3>Jeffrey Derick De la Cruz Torre</h3><p class="small">U202418952</p><p class="small text-blue">Estudiante · UPC</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACTO ================= -->
+    <section class="section section--white" id="contacto">
+      <div class="container container--sm">
+        <h2 class="section__title">Contáctanos</h2>
+        <p class="section__subtitle">Cuéntanos tu duda o idea y te respondemos pronto.</p>
+
+        <form class="card form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="cName">Nombre</label>
+            <input type="text" id="cName" name="nombre" placeholder="Escribe aquí" autocomplete="name" required>
+            <small class="field__error" id="cNameErr"></small>
+          </div>
+          <div class="field">
+            <label for="cEmail">Correo</label>
+            <input type="email" id="cEmail" name="correo" placeholder="Escribe aquí" autocomplete="email" required>
+            <small class="field__error" id="cEmailErr"></small>
+          </div>
+          <div class="field">
+            <label for="cMsg">Mensaje</label>
+            <textarea id="cMsg" name="mensaje" rows="4" placeholder="Escribe aquí" required></textarea>
+            <small class="field__error" id="cMsgErr"></small>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">Enviar</button>
+          <p class="form__ok" id="contactOk" role="status" hidden><i class="fa-solid fa-circle-check"></i> ¡Gracias! Recibimos tu mensaje.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ================= CTA FINAL ================= -->
+    <section class="section section--white section--tight">
+      <div class="container container--md">
+        <div class="cta-final">
+          <h2>¿Listo para conectar con tu gente?</h2>
+          <p>Crea tu cuenta gratis y descubre actividades cerca de ti.</p>
+          <button class="btn btn--accent btn--lg" data-open-signup>Crear mi cuenta gratis</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#inicio" class="brand brand--footer" aria-label="ConectaMás">
+          <img src="assets/images/logo-symbol.png" alt="" width="36" height="36">
+          <span class="brand__text">Conecta<span>Más</span></span>
+        </a>
+        <p>Conectamos personas, comunidades y negocios en torno a sus hobbies.</p>
+      </div>
+      <div>
+        <h4>Producto</h4>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#mapa">Mapa</a>
+        <a href="#planes">Planes</a>
+      </div>
+      <div>
+        <h4>Negocios</h4>
+        <a href="#negocios">Para negocios</a>
+        <a href="#negocios">Para expertos</a>
+      </div>
+      <div>
+        <h4>Ayuda</h4>
+        <a href="#ayuda">Preguntas frecuentes</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="#inicio">Términos</a>
+        <a href="#inicio">Privacidad</a>
+      </div>
+    </div>
+    <p class="footer__copy">© 2026 ConectaMás · Proyecto académico UPC · IHC y Tecnologías Móviles (NRC 6342)</p>
+  </footer>
+
+  <!-- ================= MODAL: CREAR CUENTA ================= -->
+  <dialog class="modal" id="signupModal" aria-labelledby="signupTitle">
+    <form class="form" id="signupForm" method="dialog" novalidate>
+      <button type="button" class="modal__close" id="signupClose" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+      <h2 id="signupTitle" class="h1">Crea tu cuenta</h2>
+      <div class="field">
+        <label for="sName">Nombre completo</label>
+        <input type="text" id="sName" placeholder="Escribe aquí" autocomplete="name" required>
+        <small class="field__error" id="sNameErr"></small>
+      </div>
+      <div class="field">
+        <label for="sEmail">Correo</label>
+        <input type="email" id="sEmail" placeholder="Escribe aquí" autocomplete="email" required>
+        <small class="field__error" id="sEmailErr"></small>
+      </div>
+      <div class="field">
+        <label for="sPass">Contraseña</label>
+        <input type="password" id="sPass" placeholder="Mínimo 8 caracteres" autocomplete="new-password" required>
+        <small class="field__error" id="sPassErr"></small>
+      </div>
+      <div class="field">
+        <label for="sPass2">Confirmar contraseña</label>
+        <input type="password" id="sPass2" placeholder="Repite tu contraseña" autocomplete="new-password" required>
+        <small class="field__error" id="sPass2Err"></small>
+      </div>
+      <button type="submit" class="btn btn--primary btn--block">Crear cuenta</button>
+      <p class="form__ok" id="signupOk" role="status" hidden><i class="fa-solid fa-circle-check"></i> ¡Listo! Tu cuenta de ejemplo fue creada.</p>
+    </form>
+  </dialog>
+
+  <script src="assets/scripts/main.js"></script>
+</body>
+</html>
